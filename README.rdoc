@@ -42,6 +42,8 @@ Test your code, not the framework!
   - Keep these thin, and only test custom methods, not delegations.
 - Controller Helpers
   - Keep the bulk of controller logic here and test thouroughly.
-- Views
-  - HTML: Test these with Page Objects by leveraging Capybara. Test dynamic elements / conditionals thouroughly.
+- Responses
   - JSON: Test these by parsing the json response.
+
+== Cucumber Test Layer
+- HTML: Test these with Page Objects by leveraging Capybara. Test dynamic elements / conditionals thouroughly.
