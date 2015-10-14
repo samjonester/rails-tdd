@@ -1,5 +1,5 @@
 = Build Status
-{<img src="https://travis-ci.org/samlawrencejones/rails-tutorial.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/samlawrencejones/rails-tutorial]
+{<img src="https://travis-ci.org/samlawrencejones/rails-tdd.svg" alt="Build Status" />}[https://travis-ci.org/samlawrencejones/rails-tdd]
 
 == Follow my progress on my blog! samljones.com/tdd-ci-rails/2015/10
 
