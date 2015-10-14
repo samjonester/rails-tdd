@@ -1,28 +1,45 @@
-== README
+= Build Status
+{<img src="https://travis-ci.org/samlawrencejones/rails-tdd.svg" alt="Build Status" />}[https://travis-ci.org/samlawrencejones/rails-tdd]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Follow my progress on my blog! samljones.com/tdd-ci-rails/2015/10
 
-Things you may want to cover:
+== Requires RVM
+https://rvm.io
 
-* Ruby version
+== Install
+$ bundle install --without production
 
-* System dependencies
+== Run all tests
+$ rake travis
 
-* Configuration
+== Guard
+Guard rspec and cucumber are installed. To use guard, run the command
+$ guard
 
-* Database creation
+based on https://www.railstutorial.org/book. Writen in a TDD manner.
 
-* Database initialization
+=Technique
+Test your code, not the framework!
 
-* How to run the test suite
+== Tools
+- Testing
+  - RSpec https://github.com/rspec/rspec-rails
+  - Capybara https://github.com/jnicklas/capybara
+  - FactoryGirl https://github.com/thoughtbot/factory_girl_rails
+  - Faker https://github.com/stympy/faker
+  - Database cleaner https://github.com/DatabaseCleaner/database_cleaner
+  - Guard RSpec https://github.com/guard/guard-rspec
+  - Guard Cucumber https://github.com/guard/guard-cucumber
+- Development
+  - Responders https://github.com/plataformatec/responders
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== RSpec Test Layers
+- Models
+  - Test only validation and custom methods.
+- Controllers
+  - Keep these thin, and only test custom methods, not delegations.
+- Controller Helpers
+  - Keep the bulk of controller logic here and test thouroughly.
+- Views
+  - HTML: Test these with Page Objects by leveraging Capybara. Test dynamic elements / conditionals thouroughly.
+  - JSON: Test these by parsing the json response.
