@@ -1,3 +1,10 @@
 language: ruby
 rvm:
-  - 2.2.1
+- 2.2.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: Z1gcsufbx4Gvkcd8AayZ0dQIZEYZ/y7aruOQ2rvk/HZI7sqkEWRImDNwG+pbuCzTnm1XRECtJVzz6N2LxKbKKzbunzCK+02+VaEh0u34FMaoIgyKi+Ys2hCLlB5MjUq4Rnq7uAkIt5DLnpfh9X2W4OejZt4+35sVMh/SQOa2Qt1+aT40ZQfApkuGpkljCwUNxl6jpW5xwE/OTtdE+bnNaeSzmcFrde4U2KqzRJdvmJ3E8tY3NjeMg9ewG+gqkuCa39A78c7M8deCVL4ZuuMIPtOzNSac034BhqodXOsSZ3npkARaCGhgyxXOprHzFN7G6ZCaZcNyPA+pblXFnzdBQVMjIurip0pQXvKIAVa8RrFvObQN3fakFKRMvmYrsgpMbwkw7rdvnP3U3s/+nuKXnVK7DjgHsldLlb5gz2HVNZ9854aHARJhfsH/jlhc/AU47dTt2aHIt1WAm6tV/EEPu9BLs3L+EbzSN9ekLox9dJNSyMFpD6NWgRxcj3lrK1+yZ4k2FOk+fTsym9K9WlWExOZHDLDZhw3ZHcldfs+0H/GbVWX1TRHXi04Bff1lRX/lcqTw6zsFGeqZ00EaXCC/PBVXjDH5y/xRRCpw4eoWzNpiqVdcA6kCetBXcD4R/qGHuWQzhYdWmrVWKX/OPYJ8oRTF6z0oh48mDBkZNDPBsLk=
+  app: rails-tdd
+  on:
+    repo: samlawrencejones/rails-tdd
