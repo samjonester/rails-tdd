@@ -4,6 +4,8 @@
 == Follow my progress on my blog! 
 http://samljones.com/tdd-ci-rails/2015/10
 
+Based on https://www.railstutorial.org/book. Writen in a TDD manner.
+
 == Requires RVM
 https://rvm.io
 
@@ -15,9 +17,8 @@ $ rake travis
 
 == Guard
 Guard rspec and cucumber are installed. To use guard, run the command
-$ guard
 
-based on https://www.railstutorial.org/book. Writen in a TDD manner.
+$ guard
 
 =Technique
 Test your code, not the framework!
