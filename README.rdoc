@@ -1,7 +1,8 @@
 = Build Status
 {<img src="https://travis-ci.org/samlawrencejones/rails-tdd.svg" alt="Build Status" />}[https://travis-ci.org/samlawrencejones/rails-tdd]
 
-== Follow my progress on my blog! samljones.com/tdd-ci-rails/2015/10
+== Follow my progress on my blog! 
+http://samljones.com/tdd-ci-rails/2015/10
 
 == Requires RVM
 https://rvm.io
