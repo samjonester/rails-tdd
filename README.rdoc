@@ -10,7 +10,7 @@ Based on https://www.railstutorial.org/book. Writen in a TDD manner.
 https://rvm.io
 
 == Install
-$ bundle install --without production
+$ rake install
 
 == Run all tests
 $ rake travis
