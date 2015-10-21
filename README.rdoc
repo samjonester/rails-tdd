@@ -4,8 +4,6 @@
 == Follow my progress on my blog! 
 http://samljones.com/tdd-ci-rails/2015/10
 
-Based on https://www.railstutorial.org/book. Writen in a TDD manner.
-
 == Requires RVM
 https://rvm.io
 
