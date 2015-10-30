@@ -1,5 +1,6 @@
 = Build Status
 {<img src="https://travis-ci.org/samlawrencejones/rails-tdd.svg" alt="Build Status" />}[https://travis-ci.org/samlawrencejones/rails-tdd]
+{<img src="https://coveralls.io/repos/samlawrencejones/rails-tdd/badge.svg?branch=master&service=github" alt="Coverage Status" />}[https://coveralls.io/github/samlawrencejones/rails-tdd?branch=master]
 
 == Follow my progress on my blog! 
 http://samljones.com/tdd-ci-rails/2015/10
