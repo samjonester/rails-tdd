@@ -34,6 +34,8 @@ gem 'responders'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'coveralls', require: false
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
