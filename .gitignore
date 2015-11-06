@@ -17,3 +17,6 @@
 /tmp
 
 vendor/bundle/
+
+# Ignore coverage output
+/coverage
