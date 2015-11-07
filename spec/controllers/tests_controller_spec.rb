@@ -110,7 +110,6 @@ RSpec.describe TestsController, type: :controller do
         test = Test.create! valid_attributes
         put :update, {:id => test.to_param, :test => new_attributes}, valid_session
         test.reload
-				puts new_attributes
 				expect(test.description).to eq(new_attributes[:description])
 				expect(test.passing).to eq(new_attributes[:passing])
 				expect(test.creator).to eq(new_attributes[:creator])
