@@ -46,6 +46,7 @@ group :development, :test do
 	gem 'cucumber-rails', :require => false
 	gem 'guard-rspec'
 	gem 'guard-cucumber'
+  gem 'factory_girl_rails'	
 end
 
 group :test do
