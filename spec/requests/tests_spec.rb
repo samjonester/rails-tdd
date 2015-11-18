@@ -29,9 +29,9 @@ RSpec.describe "Tests", type: :request do
 		end
 
 		context 'invalid id' do
-			before { get test_path id: 'foo42', format: :joson }
+			before { get test_path id: 'foo42', format: :json }
 			it "should return not found when the id doesn't exist" do
-				expect(JSON.parse(response.body)['error']).to eq('Test not found.')
+				expect(JSON.parse(response.body)['message']).to eq('Test not found.')
 			end
 		end
 	end
@@ -64,7 +64,7 @@ RSpec.describe "Tests", type: :request do
 			let(:test_attrs) { attributes_for(:test, description: '') }
 			before { post tests_path test: test_attrs, format: :json }
 			it 'should have an error for description' do
-				expect(JSON.parse(response.body)['errors']['description']).to eq('Invalid value for description.')
+				expect(JSON.parse(response.body)['errors']['description']).to include("can't be blank")
 			end
 		end
 
@@ -72,7 +72,7 @@ RSpec.describe "Tests", type: :request do
 			let(:test_attrs) { attributes_for(:test, passing: false) }
 			before { post tests_path test: test_attrs, format: :json }
 			it 'should have an error for passing' do
-				expect(JSON.parse(response.body)['errors']['passing']).to eq('Invalid value for passing.')
+				expect(JSON.parse(response.body)['errors']['passing']).to include("is not included in the list")
 			end
 		end
 
@@ -80,7 +80,7 @@ RSpec.describe "Tests", type: :request do
 			let(:test_attrs) { attributes_for(:test, creator: '') }
 			before { post tests_path test: test_attrs, format: :json }
 			it 'should have an error for creator' do
-				expect(JSON.parse(response.body)['errors']['creator']).to eq('Invalid value for creator.')
+				expect(JSON.parse(response.body)['errors']['creator']).to include("can't be blank")
 			end
 		end
 	end
@@ -99,7 +99,7 @@ RSpec.describe "Tests", type: :request do
 			let(:test) { create(:test) }
 			before { put test_path test, test: test_attrs, format: :json }
 			it 'should have an error for description' do
-				expect(JSON.parse(response.body)['errors']['description']).to eq('Invalid value for description.')
+				expect(JSON.parse(response.body)['errors']['description']).to include("can't be blank")
 			end
 		end
 
@@ -108,7 +108,7 @@ RSpec.describe "Tests", type: :request do
 			let(:test) { create(:test) }
 			before { put test_path test, test: test_attrs, format: :json }
 			it 'should have an error for creator' do
-				expect(JSON.parse(response.body)['errors']['creator']).to eq('Invalid value for passing.')
+				expect(JSON.parse(response.body)['errors']['creator']).to include("can't be blank")
 			end
 		end
 
@@ -117,7 +117,7 @@ RSpec.describe "Tests", type: :request do
 			let(:test) { create(:test) }
 			before { put test_path test, test: test_attrs, format: :json }
 			it 'should have an error for passing' do
-				expect(JSON.parse(response.body)['errors']['passing']).to eq('Invalid value for creator.')
+				expect(JSON.parse(response.body)['errors']['passing']).to include("is not included in the list")
 			end
 		end
 	end
@@ -134,7 +134,7 @@ RSpec.describe "Tests", type: :request do
 		context 'invalid test' do
 			before { delete test_path id: 'foo42', format: :json }
 			it 'should not delete and return not found' do
-				expect(JSON.parse(response.body)['error']).to_not be_empty
+				expect(JSON.parse(response.body)['message']).to eq('Test not found.')
 			end
 		end
 	end

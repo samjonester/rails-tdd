@@ -1,47 +1,53 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: [:show, :edit, :update, :destroy]
+	before_action :set_test, only: [:show, :edit, :update, :destroy]
 
 	respond_to :html, :json
 
-  def index
-    @tests = Test.all
+	rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
+	def not_found
+		render json: { message: 'Test not found.' }, status: :not_found
+	end
+
+	def index
+		@tests = Test.all
 		respond_with(@tests)
-  end
+	end
 
-  def show
+	def show
 		respond_with(@test)
-  end
+	end
 
-  def new
-    @test = Test.new
+	def new
+		@test = Test.new
 		respond_with(@test)
-  end
+	end
 
-  def edit
-  end
+	def edit
+	end
 
-  def create
-    @test = Test.new(test_params)
+	def create
+		@test = Test.new(test_params)
 		@test.save
 		respond_with(@test)
-  end
+	end
 
-  def update
+	def update
 		@test.update(test_params)
 		respond_with(@test)
-  end
+	end
 
-  def destroy
-    @test.destroy
+	def destroy
+		@test.destroy
 		respond_with(@test)
-  end
+	end
 
-  private
-    def set_test
-      @test = Test.find(params[:id])
-    end
+	private
+	def set_test
+		@test = Test.find(params[:id])
+	end
 
-    def test_params
-      params.require(:test).permit(:description, :passing, :creator)
-    end
+	def test_params
+		params.require(:test).permit(:description, :passing, :creator)
+	end
 end
