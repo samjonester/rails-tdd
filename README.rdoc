@@ -3,7 +3,7 @@
 {<img src="https://coveralls.io/repos/samlawrencejones/rails-tdd/badge.svg?branch=master&service=github" alt="Coverage Status" />}[https://coveralls.io/github/samlawrencejones/rails-tdd?branch=master]
 
 == Follow my progress on my blog! 
-http://samljones.com/tdd-ci-rails/2015/10
+{TDD + CI + Rails}[http://samljones.com/tdd-ci-rails/2015/10]
 
 == Requires RVM
 https://rvm.io
@@ -33,6 +33,9 @@ Test your code, not the framework! I'm following well documented Rails testing p
   - Guard Cucumber https://github.com/guard/guard-cucumber
 - Development
   - Responders https://github.com/plataformatec/responders
+
+== Lessons Learned
+I've written an afterword about my feeling on the testing strategies that I've outlined below. Read it on my blog! {TDD + CI + Rails - Afteword & Additional Reading}[http://samljones.com/tdd-ci-rails-ational-reading/2015/11]
 
 == RSpec Test Layers
 - Models
