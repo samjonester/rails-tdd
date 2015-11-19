@@ -20,7 +20,7 @@ Guard rspec and cucumber are installed. To use guard, run the command
 $ guard
 
 =Technique
-Test your code, not the framework!
+Test your code, not the framework! I'm following well documented Rails testing practices to learn how to test a Rails application.
 
 == Tools
 - Testing
@@ -38,11 +38,11 @@ Test your code, not the framework!
 - Models
   - Test only validation and custom methods.
 - Controllers
-  - Keep these thin, and only test custom methods, not delegations.
+  - Keep these thin, and only test custom methods, not delegations. Use generated code as a testing base.
 - Controller Helpers
-  - Keep the bulk of controller logic here and test thouroughly.
+  - Keep the bulk of view logic here and test thouroughly.
 - Responses
-  - JSON: Test these by parsing the json response.
+  - JSON: Test these by parsing the json response. They should be integration tests and abstract implementation details from the caller.
 
 == Cucumber Test Layer
-- HTML: Test these with Page Objects by leveraging Capybara. Test dynamic elements / conditionals thouroughly.
+- HTML: Test these with Page Objects by leveraging Capybara. Use these in place of view tests.
